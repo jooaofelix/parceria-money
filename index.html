@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AEA Contabilidade × Money Brokers — Convite de parceria</title>
+<meta name="description" content="Convite de parceria da AEA Contabilidade Consultiva aos mentorados da Money Brokers Brasil: você indica os empresários que já confiam em você, a AEA executa a contabilidade e você recebe comissão recorrente sobre os honorários.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#081525" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/prisma.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/prisma.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="AEA Contabilidade × Money Brokers — Convite de parceria">
+<meta property="og:description" content="Você indica. A AEA executa. A comissão sobre os honorários é recorrente, mês a mês.">
+<meta property="og:image" content="assets/prisma.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="css/parceria.css">
+<script src="js/parceria.js" defer></script>
+</head>
+<body>
+<div class="pg">
+  <!-- ============================================================
+       OVERLAY DE ENTRADA — CONVITE ESPECIAL (popup)
+       ============================================================ -->
+  <div class="invite" id="invite" role="dialog" aria-modal="true" aria-labelledby="invite-title">
+    <canvas class="invite-grid" id="grid" aria-hidden="true"></canvas>
+    <span class="glow a"></span><span class="glow b"></span>
+
+    <button type="button" class="invite-close" id="inviteClose" aria-label="Fechar convite">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="invite-frame">
+      <span class="invite-corner tl"></span><span class="invite-corner tr"></span>
+      <span class="invite-corner bl"></span><span class="invite-corner br"></span>
+      <div class="invite-card">
+        <div class="seal">
+          <img class="prism" src="assets/prisma.png" alt="AEA Contabilidade Consultiva">
+        </div>
+        <span class="eyebrow on-navy"><span class="d"></span> Convite Exclusivo</span>
+        <p class="to-line" style="margin-top:18px">Preparado especialmente para um mentorado Money Brokers Brasil</p>
+        <h1 id="invite-title">Você foi <i>selecionado</i> para uma parceria reservada a poucos.</h1>
+        <p class="lede">Antes de tudo, obrigado pela confiança que você já construiu com os seus clientes — é exatamente isso que nos fez querer te trazer para dentro dessa parceria.</p>
+        <div class="invite-cta">
+          <a class="btn btn-white" href="#intro" id="inviteOpenBtn">Abrir meu convite</a>
+        </div>
+        <div class="invite-note"><span class="dot"></span> Convite pessoal e intransferível</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STICKY BRANDBAR ============ -->
+  <header class="brandbar">
+    <div class="wrap">
+      <span class="logo">
+        <img class="prism" src="assets/prisma.png" alt="AEA Contabilidade Consultiva">
+        <span class="logo-anim">
+          <span class="logo-anim-fixed">AEA Contabilidade</span>
+          <span class="logo-rotator" aria-label="AEA Contabilidade: Consultiva, Estratégica, Parceira, Para Crédito, Recorrente">
+            <span>Consultiva</span>
+            <span>Estratégica</span>
+            <span>Parceira</span>
+            <span>Para Crédito</span>
+            <span>Recorrente</span>
+          </span>
+        </span>
+      </span>
+      <nav>
+        <a class="navlink" href="#intro">Apresentação</a>
+        <a class="navlink" href="#proposta">A Proposta</a>
+        <a class="navlink" href="#como">Como Funciona</a>
+        <a class="navlink" href="#simulador">Simulador</a>
+        <a class="navlink" href="#entrega">O que a AEA faz</a>
+      </nav>
+      <a class="btn btn-navy" href="#comecar">Quero participar</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       INTRO — apresentação breve, antes da proposta
+       ============================================================ -->
+  <section class="sec" id="intro" data-nav="dark">
+    <div class="wrap">
+      <span class="eyebrow on-navy"><span class="d"></span> Antes de começar</span>
+      <h2 class="sectitle">Problemas que você <span class="hl">já reconhece.</span></h2>
+      <p class="lede">Você já ouviu isso de algum cliente — ou já viu de perto. São os motivos mais comuns pelos quais o crédito não sai do jeito que deveria:</p>
+      <div class="grid3">
+        <div class="card problem-card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M13 2v6h6"/><path d="m9.5 12.5 5 5m0-5-5 5"/></svg></div>
+          <h4>Balanço que não convence o banco</h4>
+          <p>Índices fracos, relatório mal estruturado — e o crédito trava bem na reta final, depois de todo o trabalho de captação.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h4>Imposto pago a mais</h4>
+          <p>Enquadramento tributário errado, sem planejamento — a margem do seu cliente encolhe todo mês, sem ele nem perceber por quê.</p>
+        </div>
+        <div class="card problem-card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v5l3 2"/><circle cx="12" cy="13" r="9"/><path d="M9 1h6"/></svg></div>
+          <h4>Contabilidade que só manda boleto</h4>
+          <p>Sem estratégia, sem retorno, sem ninguém para explicar os números — nem para ajudar quando o crédito é negado.</p>
+        </div>
+      </div>
+      <div class="intro-answer">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <p class="lede">Foi exatamente para resolver isso que a AEA Contabilidade Consultiva existe: <span class="hl">contabilidade pensada para o crédito aprovar</span>. Criamos essa parceria com a Money Brokers Brasil porque vemos o mesmo problema se repetir dos dois lados da mesa — o seu e o do seu cliente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROPOSTA
+       ============================================================ -->
+  <section class="sec" id="proposta" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <span class="eyebrow"><span class="d"></span> A proposta</span>
+      <h2 class="sectitle reveal-up">A troca é <span class="hl">simples e direta.</span></h2>
+      <p class="lede">Você indica, a AEA entrega a contabilidade que o banco espera ver, e o cliente sai satisfeito dos dois lados. Veja o que cabe a cada um:</p>
+      <div class="two-col">
+        <div class="panel need reveal-up">
+          <h3>O que o seu cliente precisa</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Contabilidade que impressiona o banco</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Índices financeiros bem estruturados</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Redução legal da carga tributária</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Conformidade com a Reforma Tributária</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-2)" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Departamento pessoal e fiscal integrados</li>
+          </ul>
+        </div>
+        <div class="panel gain reveal-up">
+          <h3>O que você ganha com isso</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h4.5a1.5 1.5 0 0 1 0 3H9m0 0h5"/></svg> Receita recorrente mensal</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h4.5a1.5 1.5 0 0 1 0 3H9m0 0h5"/></svg> Comissão de 10% a 20% por cliente</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h4.5a1.5 1.5 0 0 1 0 3H9m0 0h5"/></svg> Fidelização e blindagem da carteira</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h4.5a1.5 1.5 0 0 1 0 3H9m0 0h5"/></svg> Mais força na consultoria de crédito</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 10h4.5a1.5 1.5 0 0 1 0 3H9m0 0h5"/></svg> Relação de longo prazo com o cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMO FUNCIONA
+       ============================================================ -->
+  <section class="sec" id="como">
+    <div class="wrap">
+      <span class="eyebrow"><span class="d"></span> Como funciona</span>
+      <h2 class="sectitle reveal-up">Quatro passos. Você fica com <span class="hl">o relacionamento.</span></h2>
+      <p class="lede">Você faz o que já faz bem. Nós cuidamos de 100% da execução técnica contábil. Nenhum conhecimento de contabilidade é necessário.</p>
+      <div class="flow">
+        <div class="step reveal-up">
+          <div class="no">01</div>
+          <h4>Você capta</h4>
+          <p>Segue atendendo o empresário que já confia em você e precisa de crédito.</p>
+        </div>
+        <div class="step reveal-up">
+          <div class="no">02</div>
+          <h4>Apresenta a AEA</h4>
+          <p>Faz a indicação qualificada e conecta o cliente à nossa equipe.</p>
+        </div>
+        <div class="step reveal-up">
+          <div class="no">03</div>
+          <h4>Nós entregamos</h4>
+          <p>Cuidamos da negociação técnica, do onboarding e da contabilidade premium.</p>
+        </div>
+        <div class="step reveal-up">
+          <div class="no">04</div>
+          <h4>Você recebe</h4>
+          <p>Comissão processada todo mês, de forma automática, enquanto o contrato existir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SIMULADOR
+       ============================================================ -->
+  <section class="sim-wrap sec" id="simulador">
+    <div class="wrap">
+      <span class="eyebrow"><span class="d"></span> Simulador de comissão</span>
+      <h2 class="sectitle">Quanto a <span class="hl">sua</span> carteira paga por mês?</h2>
+      <p class="lede">Ajuste com números reais da sua base. O cálculo é atualizado na hora.</p>
+      <div class="sim">
+        <div class="controls">
+          <div class="ctrl">
+            <label>Clientes indicados <span class="rd" id="rd-cli">8 clientes</span></label>
+            <input type="range" id="s-cli" min="1" max="40" step="1" value="8">
+            <div class="ticks"><span>1</span><span>20</span><span>40</span></div>
+          </div>
+          <div class="ctrl">
+            <label>Honorário médio por cliente <span class="rd" id="rd-hon">R$ 5.000</span></label>
+            <input type="range" id="s-hon" min="2000" max="30000" step="500" value="5000">
+            <div class="ticks"><span>R$ 2 mil</span><span>R$ 16 mil</span><span>R$ 30 mil</span></div>
+          </div>
+          <div class="ctrl">
+            <label>Sua comissão</label>
+            <div class="seg" role="group" aria-label="Percentual de comissão">
+              <button type="button" data-pct="0.10">10%</button>
+              <button type="button" data-pct="0.15">15%</button>
+              <button type="button" data-pct="0.20" aria-pressed="true">20%</button>
+            </div>
+          </div>
+        </div>
+        <div class="result">
+          <div class="rlbl">Sua comissão recorrente</div>
+          <div class="big tnum" id="r-month">R$ 8.000</div>
+          <div class="per">por mês, todo mês — enquanto os contratos existirem</div>
+          <hr>
+          <div class="year"><span class="rlbl" style="opacity:.85">Ao longo de 12 meses</span><span class="yv tnum" id="r-year">R$ 96.000</span></div>
+          <p class="note" id="r-note">Sobre R$ 40.000 em honorários gerados pela sua indicação. Você não executa nada técnico — só mantém o relacionamento.</p>
+          <div class="rcta"><a class="btn btn-white" href="#comecar">Começar com a minha carteira</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       O QUE A AEA ENTREGA
+       ============================================================ -->
+  <section class="sec" id="entrega">
+    <div class="wrap">
+      <span class="eyebrow"><span class="d"></span> O que a AEA entrega ao seu cliente</span>
+      <h2 class="sectitle reveal-up">Contabilidade orientada ao <span class="hl">resultado que importa.</span></h2>
+      <p class="lede">Crédito aprovado, tributos reduzidos e empresa saudável. Quando você indica, seu cliente recebe muito mais do que contabilidade tradicional — e isso protege a sua indicação.</p>
+      <div class="grid3">
+        <div class="card reveal-up"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg></div><h4>Departamento Fiscal</h4><p>Gestão tributária completa com foco em redução legal da carga fiscal, totalmente atualizada com a Reforma Tributária.</p></div>
+        <div class="card reveal-up"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Departamento Pessoal</h4><p>Folha, eSocial, admissões e demissões com precisão. Gestão de colaboradores reduzindo riscos trabalhistas.</p></div>
+        <div class="card reveal-up"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h4>Balanço Premium</h4><p>Relatórios e balanços com foco na qualidade dos índices financeiros — exatamente o que os bancos exigem para liberar crédito.</p></div>
+        <div class="card reveal-up"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4"/></svg></div><h4>Assessoria em Redução Fiscal</h4><p>Planejamento tributário especializado para identificar oportunidades legais e aumentar o fluxo de caixa do cliente.</p></div>
+        <div class="card reveal-up"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg></div><h4>Tecnologia de Ponta</h4><p>Automação, sistemas integrados e relatórios digitais em tempo real para máxima eficiência e transparência.</p></div>
+        <div class="card reveal-up"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 13h6M9 17h6"/></svg></div><h4>Inteligência para Crédito</h4><p>Sabemos o que os bancos esperam do relatório. Estruturamos a contabilidade para maximizar a aprovação de crédito.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NÚMEROS
+       ============================================================ -->
+  <section class="sec" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <span class="eyebrow"><span class="d"></span> Os números que importam</span>
+      <h2 class="sectitle reveal-up">Você já conhece esses empresários. <span class="hl">Eles já confiam em você.</span></h2>
+      <div class="stats">
+        <div class="stat reveal-up"><div class="v"><small>R$</small><span class="num" data-target="2">0</span>k</div><div class="k">Honorário mínimo</div><div class="d">Contrato mínimo por cliente atendido pela AEA.</div></div>
+        <div class="stat reveal-up"><div class="v"><small>R$</small><span class="num" data-target="30">0</span>k</div><div class="k">Honorário máximo</div><div class="d">Clientes de maior porte geram de R$ 20 mil a R$ 30 mil/mês.</div></div>
+        <div class="stat reveal-up"><div class="v"><span class="num" data-target="20">0</span><small>%</small></div><div class="k">Sua comissão</div><div class="d">Participação de 10% a 20% sobre o honorário mensal.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="sec" style="background:var(--bg-2);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <span class="eyebrow"><span class="d"></span> Antes de você perguntar</span>
+      <h2 class="sectitle reveal-up">As dúvidas que <span class="hl">todo parceiro</span> tem.</h2>
+      <div class="faq">
+        <details open class="reveal-up"><summary>Preciso entender de contabilidade?</summary><p>Não. Sua função é o relacionamento e a indicação qualificada. Toda a parte técnica — fiscal, pessoal, balanço e negociação — é 100% conosco.</p></details>
+        <details class="reveal-up"><summary>Tem algum custo para participar?</summary><p>Nenhum. Você não paga para ser parceiro. Sua renda vem da comissão sobre os contratos que a sua indicação gera.</p></details>
+        <details class="reveal-up"><summary>Por quanto tempo eu recebo?</summary><p>Enquanto o cliente permanecer com a AEA. É receita recorrente: entra todo mês enquanto o contrato existir, e cresce conforme sua carteira cresce.</p></details>
+        <details class="reveal-up"><summary>E se meu cliente já tem contador?</summary><p>Cuidamos de toda a transição contábil, de forma discreta e sem dor de cabeça para o cliente. Você só faz a ponte.</p></details>
+        <details class="reveal-up"><summary>Como e quando a comissão é paga?</summary><p>A partir da assinatura do contrato, o pagamento é processado mensalmente de forma automática. Os detalhes são formalizados na reunião de onboarding.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL
+       ============================================================ -->
+  <section class="sec final" id="comecar" data-nav="dark">
+    <span class="glow a" style="opacity:.6"></span>
+    <div class="wrap">
+      <span class="eyebrow on-navy"><span class="d"></span> O próximo passo</span>
+      <h2>Comece pela carteira que <span class="hl" style="text-decoration-color:var(--gold);color:#fff">você já tem.</span></h2>
+      <p class="lede">Nossos consultores apresentam todos os detalhes, mapeiam com você os clientes de maior potencial e cuidam do onboarding. Você mantém o relacionamento — e passa a receber todo mês.</p>
+      <div class="invite-cta">
+        <a class="btn btn-white" href="https://wa.me/55DDDNUMERO?text=Ol%C3%A1%2C%20sou%20mentorado%20da%20Money%20Brokers%20e%20quero%20saber%20mais%20sobre%20a%20parceria%20com%20a%20AEA%20Contabilidade." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.8-.9-2.08-1-.28-.1-.48-.15-.68.15-.2.3-.78 1-.96 1.2-.18.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.18-.3-.02-.46.13-.6.13-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.24-.24-.58-.5-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.13 4.53.72.3 1.28.5 1.71.64.72.23 1.37.2 1.89.12.58-.08 1.8-.73 2.05-1.44.25-.7.25-1.3.18-1.44-.07-.13-.27-.2-.57-.35zM12 2a10 10 0 0 0-8.5 15.28L2 22l4.85-1.46A10 10 0 1 0 12 2z"/></svg>
+          Falar agora no WhatsApp
+        </a>
+        <a class="btn btn-ghost-light" href="mailto:jvctrfelix@gmail.com?subject=Parceria%20AEA%20%C3%97%20Money%20Brokers&body=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20a%20parceria.">Prefiro por e-mail</a>
+      </div>
+      <div class="quote">“Seja bem-vindo à evolução da contabilidade.”<small>AEA Contabilidade Consultiva — tecnologia, inteligência financeira e parceria estratégica.</small></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span><b>AEA Contabilidade Consultiva</b> — parceria estratégica × Money Brokers Brasil.</span>
+      <span>Convite reservado aos mentorados MBB.</span>
+    </div>
+  </footer>
+
+  <div class="sticky"><a class="btn btn-primary" href="#comecar">Quero participar — falar no WhatsApp</a></div>
+</div>
+</body>
+</html>
