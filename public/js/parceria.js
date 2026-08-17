@@ -68,7 +68,18 @@
       });
     });
 
-    requestAnimationFrame(function(){ requestAnimationFrame(openInvite); });
+    // Quem chega por um link com âncora (…/#comecar) veio atrás de uma seção
+    // específica: abrir o convite por cima seria um obstáculo, e pior, o
+    // travamento de scroll do overlay impediria a página de pular até ela.
+    // Isso acontece de verdade porque os botões internos usam a URL absoluta:
+    // quando o endereço atual não bate exatamente com ela — /index.html, um
+    // domínio próprio, um ?utm_source= de campanha — o clique recarrega o
+    // documento em vez de só rolar, e a página volta do zero com a âncora.
+    if(location.hash){
+      invite.classList.add('is-closed');
+    } else {
+      requestAnimationFrame(function(){ requestAnimationFrame(openInvite); });
+    }
   }
 
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

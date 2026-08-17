@@ -14,8 +14,22 @@ Os dois contatos ficam na seção final (`#comecar`), em `public/index.html`:
 - **E-mail** — link `mailto:` com assunto e corpo pré-preenchidos.
 
 Os demais botões da página (`Quero participar`, `Começar com a minha carteira`
-e a barra fixa do mobile) são âncoras para `#comecar`: levam o visitante até
-essa seção em vez de abrir o WhatsApp direto.
+e a barra fixa do mobile) levam o visitante até essa seção em vez de abrir o
+WhatsApp direto. Eles apontam para a URL absoluta do site:
+
+```
+https://parceria-money.jvctrfelix.workers.dev/#comecar
+```
+
+**Se o endereço do site mudar** — domínio próprio, outro nome de Worker — esses
+três links precisam ser atualizados junto, senão passam a mandar o visitante
+para fora da página que ele está vendo.
+
+O navegador só trata isso como rolagem quando a URL atual bate exatamente com a
+do link. Em `/index.html`, num domínio próprio ou com um `?utm_source=` de
+campanha, o clique recarrega o documento e volta com a âncora. Funciona, mas é
+uma volta a mais; usar `href="#comecar"` evitaria o recarregamento em todos os
+casos.
 
 ## Estrutura
 
@@ -66,6 +80,10 @@ configurar além disso. Para deployar da sua máquina: `npm run deploy`.
 **Overlay de convite** — abre sozinho no carregamento e trava o scroll. Fecha
 pelo botão "Abrir meu convite" (que rola até a primeira seção), pelo ×, clicando
 no fundo ou com `Esc`.
+
+Não abre quando a URL já traz uma âncora (`…/#comecar`): quem chega por um link
+de seção veio atrás dela, e o travamento de scroll do overlay impediria a página
+de pular até lá.
 
 **Simulador de comissão** — dois sliders (clientes indicados, honorário médio) e
 três faixas de comissão (10%, 15%, 20%). O valor mensal é animado a cada troca de
