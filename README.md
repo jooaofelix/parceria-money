@@ -19,22 +19,46 @@ por o número real no formato internacional sem símbolos — por exemplo
 ## Estrutura
 
 ```
-index.html            marcação da página inteira (uma única página, sem rotas)
-css/parceria.css      tokens de cor, tema claro/escuro e todos os componentes
-js/parceria.js        simulador, overlay de convite, animações de entrada
-assets/prisma.png     logo usado no selo do convite, na barra do topo e no favicon
+wrangler.toml                configuração de deploy na Cloudflare
+package.json                 scripts de dev e deploy
+public/                      tudo que vai para o ar — e só isto
+  index.html                 marcação da página inteira (uma única página, sem rotas)
+  css/parceria.css           tokens de cor, tema claro/escuro e todos os componentes
+  js/parceria.js             simulador, overlay de convite, animações de entrada
+  assets/prisma.png          logo do selo, da barra do topo e do favicon
 ```
+
+O site inteiro mora em `public/`. O que está acima dessa pasta (README,
+configuração) fica de fora do que é servido.
 
 ## Rodando localmente
 
-Qualquer servidor estático serve. Abrir o `index.html` direto pelo `file://`
-também funciona, mas um servidor evita surpresas com caminhos relativos:
-
 ```sh
-npx http-server -p 8080 .
-# ou
-python3 -m http.server 8080
+npm run dev          # wrangler, igual ao ambiente da Cloudflare
+npm run dev:static   # qualquer servidor estático, sem wrangler
 ```
+
+## Deploy na Cloudflare
+
+O projeto é só de assets estáticos — não existe script de Worker, e por isso o
+`wrangler.toml` não tem a chave `main`.
+
+**Workers** (o padrão ao importar um repositório hoje). No painel:
+
+| Campo             | Valor                |
+| ----------------- | -------------------- |
+| Root directory    | `/`                  |
+| Build command     | *(vazio)*            |
+| Deploy command    | `npx wrangler deploy` |
+
+O `wrangler.toml` na raiz já aponta para `public/`, então não há nada a
+configurar além disso. Para deployar da sua máquina: `npm run deploy`.
+
+**Pages**, se preferir: build command vazio e **output directory `public`**.
+
+> Sem o `wrangler.toml` o build falha — um projeto Workers não tem como
+> adivinhar o que servir. Foi exatamente esse o motivo da primeira versão
+> deste repositório não subir.
 
 ## Como a página se comporta
 

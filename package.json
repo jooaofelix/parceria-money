@@ -1,0 +1,16 @@
+{
+  "name": "parceria-money",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Página de convite da parceria AEA Contabilidade × Money Brokers Brasil.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:static": "npx serve public",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "license": "UNLICENSED"
+}

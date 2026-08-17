@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------------------
+# Parceria AEA × Money Brokers — site estático servido pela Cloudflare.
+#
+# Fica na RAIZ do repositório de propósito: assim o build da Cloudflare
+# funciona com "Root directory = /" (o padrão) e "Deploy command =
+# npx wrangler deploy", sem ajuste extra no painel.
+#
+# Não existe script de Worker aqui: o projeto é só de assets estáticos, então
+# não há chave "main". Tudo que é servido sai de public/ — README.md e este
+# arquivo ficam de fora justamente por estarem acima dessa pasta.
+# ---------------------------------------------------------------------------
+
+name = "parceria-money"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "public"
+
+# A página é única e não usa roteamento no cliente. Com o padrão, um caminho
+# inexistente responde 404 em vez de devolver o index.html — que é o correto
+# aqui. Se um dia a página virar multi-rota no cliente, troque para
+# not_found_handling = "single-page-application".
