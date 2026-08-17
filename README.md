@@ -4,17 +4,18 @@ Página de convite/venda da parceria entre a **AEA Contabilidade Consultiva** e 
 mentorados da **Money Brokers Brasil**. Site estático: HTML, CSS e um arquivo de
 JavaScript sem dependências, sem build e sem framework.
 
-## Antes de publicar
+## Contatos
 
-O link do WhatsApp está com um placeholder. Troque em `index.html`:
+Os dois contatos ficam na seção final (`#comecar`), em `public/index.html`:
 
-```
-https://wa.me/55DDDNUMERO?text=...
-              ^^^^^^^^^^
-```
+- **WhatsApp** — `https://wa.me/5512991338866`, com a mensagem inicial já
+  preenchida pelo parâmetro `?text=`. O número vai no formato internacional,
+  só dígitos: `55` + DDD + número.
+- **E-mail** — link `mailto:` com assunto e corpo pré-preenchidos.
 
-por o número real no formato internacional sem símbolos — por exemplo
-`5511999999999`.
+Os demais botões da página (`Quero participar`, `Começar com a minha carteira`
+e a barra fixa do mobile) são âncoras para `#comecar`: levam o visitante até
+essa seção em vez de abrir o WhatsApp direto.
 
 ## Estrutura
 
